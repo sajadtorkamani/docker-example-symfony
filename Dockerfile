@@ -7,6 +7,9 @@ FROM php:${PHP_VERSION}-fpm
 RUN apt-get update && apt-get install -y \
     nginx \
     supervisor \
+    sudo \
+    lsof \
+    man \
     vim
 
 # Copy the default nginx.conf provided by the base image just for reference
@@ -15,4 +18,10 @@ RUN cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
 # Copy the custom nginx.conf to the container running Nginx
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 
+# Copy the custom supervisord.conf to the container running Supervisor
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 EXPOSE 8080
+
+CMD ["/usr/bin/supervisord"]
+
