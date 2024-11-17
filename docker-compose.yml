@@ -10,5 +10,13 @@ services:
         volumes:
             -   docker-example-symfony-mysql:/var/lib/mysql
 
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"
+
+
 volumes:
     docker-example-symfony-mysql:
