@@ -1,3 +1,7 @@
+<?php
+  require_once __DIR__ . '/../vendor/autoload.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +17,7 @@
       nisi, nulla quaerat reiciendis saepe, sapiente vero! Praesentium,
       vitae?
     </p>
+
+    <?php dump('Hi') ?>
   </body>
 </html>
-<?php

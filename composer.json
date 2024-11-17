@@ -1,0 +1,17 @@
+{
+    "name": "sajadtorkamani/docker-example-symfony",
+    "autoload": {
+        "psr-4": {
+            "Sajadtorkamani\\DockerExampleSymfony\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sajad Torkamani",
+            "email": "sajadtorkamani1@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^7.1"
+    }
+}
