@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
+$currentDate = date('Y-m-d H:i:s');
+$currentIp = $_SERVER['REMOTE_ADDR'];
 ?>
 
 <!doctype html>
