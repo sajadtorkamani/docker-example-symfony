@@ -1,4 +1,4 @@
-# Base image:  https://github.com/docker-library/php/blob/master/8.3/bookworm/fpm/Dockerfile
+# Base image: https://github.com/docker-library/php/blob/master/8.3/bookworm/fpm/Dockerfile
 ARG PHP_VERSION=8.3
 
 FROM php:${PHP_VERSION}-fpm
@@ -19,7 +19,6 @@ RUN pecl install xdebug-3.3.2 \
 # Configure Xdebug
 RUN sed -i '1 a xdebug.mode=debug' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 && sed -i '1 a xdebug.client_host=host.docker.internal' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-
 
 # Copy the default nginx.conf provided by the base image just for reference
 RUN cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
