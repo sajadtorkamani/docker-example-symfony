@@ -1,5 +1,5 @@
 <?php
-  require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 ?>
 
 <!doctype html>
@@ -12,12 +12,13 @@
   <body>
     <h1>Hello from Docker!</h1>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusamus
-      adipisci amet aperiam asperiores atque earum itaque magnam minus modi
-      nisi, nulla quaerat reiciendis saepe, sapiente vero! Praesentium,
-      vitae?
-    </p>
+    <p>This application is Dockerized and includes the following components:</p>
 
-    <?php dump('Hi') ?>
+    <ul>
+      <li>PHP 8.3 & XDebug</li>
+      <li>PHP-FPM</li>
+      <li>Nginx</li>
+      <li>MySQL</li>
+    </ul>
   </body>
 </html>

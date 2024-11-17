@@ -12,14 +12,23 @@ RUN apt-get update && apt-get install -y \
     man \
     vim
 
+# Install & enable Xdebug
+RUN pecl install xdebug-3.3.2 \
+    && docker-php-ext-enable xdebug
+
+# Configure Xdebug
+RUN sed -i '1 a xdebug.mode=debug' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& sed -i '1 a xdebug.client_host=host.docker.internal' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+
 # Copy the default nginx.conf provided by the base image just for reference
 RUN cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
 
 # Copy the custom nginx.conf to the container running Nginx
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY docker/nginx.conf /etc/nginx/nginx.conf
 
 # Copy the custom supervisord.conf to the container running Supervisor
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 8080
 

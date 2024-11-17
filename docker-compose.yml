@@ -11,6 +11,8 @@ services:
             -   docker-example-symfony-mysql:/var/lib/mysql
 
     php:
+        environment:
+            PHP_IDE_CONFIG: "serverName=docker-example-symfony"
         build:
             context: .
             dockerfile: docker/Dockerfile
