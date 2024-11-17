@@ -19,6 +19,5 @@ services:
         volumes:
             - ./:/var/www/html
 
-
 volumes:
     docker-example-symfony-mysql:
